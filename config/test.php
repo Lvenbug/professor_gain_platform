@@ -27,7 +27,7 @@ class MysqlCommon
 		$i=0;
 		$a1=array();
 		if($where==NULL){
-			$query="select ".$field." from ".$table;
+			$query="select ".$field." from ".$table;//当$where变量为空时，使用这个sql语句执行
 		}else{
 			$query="select ".$field." from ".$table." where ".$where;
 		}
