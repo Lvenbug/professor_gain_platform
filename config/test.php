@@ -25,7 +25,7 @@ class MysqlCommon
 	//数据库查询多行数据
 	public function getDatas($field,$table,$where){
 		$i=0;
-		$a1=array();
+		$a=array();
 		if($where==NULL){
 			$query="select ".$field." from ".$table;
 		}else{
@@ -33,11 +33,11 @@ class MysqlCommon
 		}
 		$re = mysqli_query($this->link,$query);
 		while($row = mysqli_fetch_assoc($re)){
-			$a1[$i]=$row;
+			$a[$i]=$row;
 			$i++;
 		}
 		
-		return $a1;
+		return $a;
 	}
 
 	//分页显示查询
